@@ -6,14 +6,14 @@ const AddMovie = ({ onAdd }) => {
         title: '',
         description: '',
         poster: '',
-        rating: ''
+        rating: 1
     });
 
     const handleChange = (e) => {
         let { name, value } = e.target;
     
         if (name === "rating") {
-            value = parseFloat(value); // Convert to a number
+            value = parseFloat(value) || 1; // Convert to a number
             if (value < 1) value = 1;
             if (value > 10) value = 10;
         }
@@ -40,6 +40,9 @@ const AddMovie = ({ onAdd }) => {
     
         onAdd(trimmedMovie);
         setNewMovie({ title: '', description: '', poster: '', rating: 1 });
+
+        // alert the user that the movie has been added
+        alert('Movie added successfully!');
     };
     
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // This component displays a movie card with its title, description, poster, and rating
 const MovieCard = ({ movie }) => {
@@ -13,7 +14,9 @@ const MovieCard = ({ movie }) => {
 
             {/* Right: Movie Info */}
             <div className="sm:ml-8 mt-4 sm:mt-0 flex flex-col justify-between w-full p-4">
-                <h2 className="text-xl font-bold">{movie.title}</h2>
+                <Link to={`/movie/${encodeURIComponent(movie.title)}`} className="text-xl font-bold text-blue-400 hover:underline">
+                    {movie.title}
+                </Link>
                 <p className="text-sm text-gray-300 mt-2">{movie.description}</p>
                 <span className="text-yellow-400 font-semibold mt-2">⭐ {movie.rating}</span>
             </div>

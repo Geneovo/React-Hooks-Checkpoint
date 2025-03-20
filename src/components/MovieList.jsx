@@ -7,7 +7,7 @@ const MovieList = ({ movies }) => {
     <div className="flex justify-center">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-screen-lg px-5 sm:px-0 py-8">
         {movies.map((movie, index) => (
-          <MovieCard key={index} movie={movie} />
+          <MovieCard key={movie.title} movie={movie} />
         ))}
       </div>
     </div>
